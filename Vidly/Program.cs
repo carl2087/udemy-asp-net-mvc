@@ -1,4 +1,12 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Vidly.Areas.Identity.Data;
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("YourDbContextConnection") ?? throw new InvalidOperationException("Connection string 'YourDbContextConnection' not found.");;
+
+builder.Services.AddDbContext<YourDbContext>(options => options.UseSqlite(connectionString));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<YourDbContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -25,5 +33,9 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapRazorPages();
 
 app.Run();
