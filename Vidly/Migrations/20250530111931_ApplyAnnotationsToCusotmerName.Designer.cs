@@ -10,9 +10,9 @@ using Vidly.Areas.Identity.Data;
 
 namespace Vidly.Migrations
 {
-    [DbContext(typeof(YourDbContext))]
-    [Migration("20250529104521_InitialCreate")]
-    partial class InitialCreate
+    [DbContext(typeof(VidlyDBContext))]
+    [Migration("20250530111931_ApplyAnnotationsToCusotmerName")]
+    partial class ApplyAnnotationsToCusotmerName
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -216,6 +216,49 @@ namespace Vidly.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Vidly.Models.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsSubscribedToNewsLetter")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<byte>("MembershipTypeId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MembershipTypeId");
+
+                    b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("Vidly.Models.MembershipType", b =>
+                {
+                    b.Property<byte>("Id")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<byte>("DiscountRate")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<byte>("DurationInMonths")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<short>("SignUpFee")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MembershipType");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -265,6 +308,17 @@ namespace Vidly.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Vidly.Models.Customer", b =>
+                {
+                    b.HasOne("Vidly.Models.MembershipType", "MembershipType")
+                        .WithMany()
+                        .HasForeignKey("MembershipTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MembershipType");
                 });
 #pragma warning restore 612, 618
         }

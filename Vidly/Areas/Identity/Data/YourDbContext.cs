@@ -1,12 +1,16 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Vidly.Models;
 
 namespace Vidly.Areas.Identity.Data;
 
-public class YourDbContext : IdentityDbContext<IdentityUser>
+public class VidlyDBContext : IdentityDbContext<IdentityUser>
 {
-    public YourDbContext(DbContextOptions<YourDbContext> options)
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Movie> Movies { get; set; }
+    public DbSet<Genre> Genres { get; set; }
+    public VidlyDBContext(DbContextOptions<VidlyDBContext> options)
         : base(options)
     {
     }
