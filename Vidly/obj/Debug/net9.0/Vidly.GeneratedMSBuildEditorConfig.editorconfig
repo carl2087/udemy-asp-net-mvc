@@ -52,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/carlellis/Developer/Ember/Training/udemy-asp-net-mvc/Vidly/Views/Customers/CustomerForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXJzL0N1c3RvbWVyRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/carlellis/Developer/Ember/Training/udemy-asp-net-mvc/Vidly/Views/Customers/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXJzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -68,12 +72,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/carlellis/Developer/Ember/Training/udemy-asp-net-mvc/Vidly/Views/Movies/CustomerForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0N1c3RvbWVyRm9ybS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/carlellis/Developer/Ember/Training/udemy-asp-net-mvc/Vidly/Views/Movies/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/carlellis/Developer/Ember/Training/udemy-asp-net-mvc/Vidly/Views/Movies/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/carlellis/Developer/Ember/Training/udemy-asp-net-mvc/Vidly/Views/Movies/Movieform.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTW92aWVzL01vdmllZm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/carlellis/Developer/Ember/Training/udemy-asp-net-mvc/Vidly/Views/Movies/Random.cshtml]

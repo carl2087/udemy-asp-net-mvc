@@ -10,6 +10,7 @@ public class VidlyDBContext : IdentityDbContext<IdentityUser>
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Movie> Movies { get; set; }
     public DbSet<Genre> Genres { get; set; }
+    public DbSet<MembershipType> MembershipType { get; set; }
     public VidlyDBContext(DbContextOptions<VidlyDBContext> options)
         : base(options)
     {
